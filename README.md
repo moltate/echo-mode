@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Echo
 
-## Getting Started
+**Controlled anonymity. Ephemeral. Safe.**
 
-First, run the development server:
+A structured, ephemeral anonymous interaction system with built-in behavioral safeguards for safe, meaningful conversations.
+
+## ✨ Core Features
+
+- One-screen safety explainer on landing
+- Mood + Intent selection (8+ predefined cards)
+- Instant matching with 30-second fallback to listener mode
+- 12-minute server-synced timed chat rooms
+- Real-time text-only chat with strict content filtering
+- Automatic message & room deletion at timer end
+- Device fingerprinting + reputation system for abuse prevention
+- No profiles, no history, no persistent data — everything disappears forever
+- Full Row Level Security (RLS) on Supabase
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 (App Router) + TypeScript + Tailwind CSS
+- **Backend**: Supabase (Anonymous Auth, Postgres, Realtime)
+- **Security**: FingerprintJS + SHA-256 device hashing, keyword + regex content filter, reputation scoring
+- **UI**: Mobile-first, responsive design with visible countdown timer and safety banners everywhere
+
+## 🚀 Quick Start (Local Development)
+
+### 1. Supabase Setup
+
+1. Create a new project at [supabase.com](https://supabase.com)
+2. Go to **SQL Editor** and run the complete schema below
+3. Copy these three values from your Supabase dashboard:
+   - Project URL
+   - `anon` public key
+   - `service_role` key
+
+### 2. Run Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/moltate/echo-mode.git
+cd echo-mode
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm install
